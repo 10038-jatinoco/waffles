@@ -1,0 +1,586 @@
+@import url(../fonts/GothamBook.css);
+@import url(../fonts/GothamBold.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ededed;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body, #container {
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'arial';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+p {
+    font-family: 'arial';
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: arial;
+    letter-spacing: 1px;
+}
+
+span {
+    font-family: 'GothamBook';
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header {
+    color: #FFF;
+    background: #0a4661;
+    height: 35px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.optionsBar {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionsBar span {
+    color: #FFF;
+    font-size: 11pt;
+    font-family: 'GothamBook';
+    text-transform: uppercase;
+    margin-left: 30px;
+}
+
+.photouser {
+    margin-left: 30px;
+    width: 25px;
+    height: 25px;
+}
+
+.close {
+    width: 25px;
+    height: 25px;
+}
+
+.optionsBar a {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-left: 30px;
+}
+
+nav ul {
+    background: #058167;
+    /*background: #05817d;*/
+    list-style: none;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+nav ul > li a {
+    position: relative;
+}
+
+nav a {
+    color: #FFF;
+    display: block;
+    font-size: 10pt;
+    font-family: 'GothamBook';
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    border-right: 1px solid #319B8F;
+}
+
+nav .principal > a {
+    background: url(../images/arrow_bottom.png) no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto auto;
+    background-position: 94% center;
+    background-size: 10px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav li ul {
+    /*background: #177470;*/
+    background: #2d9872;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    border-radius: 0 0 10px 10px;
+}
+
+nav li ul a {
+    position: relative;
+    padding: 10px 30px;
+    border-right: initial;
+}
+
+nav li ul a:hover {
+    /*background: #2c9595;*/
+    background: #147556;
+}
+
+nav li ul li:last-child {
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+#container {
+    padding: 90px 15px 15px;
+}
+
+/*****************************************************************/
+/*Esto debe de ir en resgistro_usuario.php*/
+
+/*.form_register{
+		width: 450px;
+		margin: auto;
+	}
+
+	.form_register h1{
+		color: #3c93b0;
+	}
+
+	hr{
+		border: 0;
+		background: #ccc;
+		height: 1px;
+		margin: 10px 0;
+		display: block;
+	}
+
+	form{
+		background: #fff;
+		margin: auto;
+		padding: 20px 50px;
+		border: 1px solid #d1d1d1;
+	}
+
+	label{
+		display: block;
+		font-size: 12pt;
+		font-family: 'GothamBook';
+		margin: 15px auto 5px auto;
+	}
+
+	input, select{
+		display: block;
+		width: 100%;
+		font-size: 13pt;
+		padding: 5px;
+		border: 1px solid #85929e;
+		border-radius: 5px;
+	}
+
+	.btn_save{
+		font-size: 12pt;
+		background: #12a4c6;
+		padding: 10px;
+		letter-spacing: 1px;
+		border: 0;
+		cursor: pointer;
+		margin: 15px auto;
+	}
+
+	.alert{
+		width: 100%;
+		background: #66e07d66;
+		border-radius: 6px;
+		margin: 20px auto;
+	}
+
+	.msg_error{
+		color: #e65656;
+	}
+
+	.msg_save{
+		color: #126e00;
+	}
+
+	.alert p{
+		padding: 10px;
+	}*/
+
+.prevPhoto {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    height: 150px;
+    border: 1px solid #CCC;
+    position: relative;
+    cursor: pointer;
+    background: url(../images/uploads/user.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+}
+
+.prevPhoto label {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.prevPhoto img {
+    width: 100%;
+    height: 100%;
+}
+
+.upimg, .notBlock {
+    display: none !important;
+}
+
+.errorArchivo {
+    font-size: 16px;
+    font-family: arial;
+    color: #cc0000;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.delPhoto {
+    color: #FFF;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: red;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 10;
+}
+
+#tbl_list_productos img {
+    width: 50px;
+}
+
+.imgProductoDelete {
+    width: 175px;
+}
+
+.ui-container {
+    margin-top: 20px;
+}
+
+.ui-box {
+    background: #fff;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12);
+    border: 1px solid #bcc0cf;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.ui-box .ui-box-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 15px 18px 5px 18px;
+}
+
+.ui-box .ui-box-content {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 10px 18px;
+}
+
+.ui-box .ui-box-footer {
+    background: #dcdfe8;
+    font-size: 14px;
+    color: #333;
+    padding: 12px 10px;
+}
+
+.ui-box .ui-box-footer.right-aligned {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ui-form .ui-form-group {
+    margin-bottom: 15px;
+}
+
+.ui-form .ui-form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ui-form .ui-form-group input,
+.form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ui-form .ui-form-group select {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ui-form .ui-form-group input[type="file"] {
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.ui-form .ui-form-group input[type="file"]::-webkit-file-upload-button,
+.ui-form .ui-form-group input[type="file"]::file-selector-button {
+    background: #006cad;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ui-form .ui-form-group.compound {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+.ui-form .ui-form-group.compound .ui-form-group:not(:last-child) {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.ui-form .ui-form-group.compound .ui-form-group label {
+    font-size: 0.85em;
+}
+
+.ui-form .ui-form-group.compound .ui-form-group.button {
+    justify-content: end;
+    align-items: end;
+    margin-top: auto;
+    flex: 0;
+}
+
+.ui-button {
+    background: #ccc;
+    color: #333;
+    display: inline-block;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ui-button.blue {
+    background: #006cad;
+    color: #fff;
+}
+
+.ui-button.blue:active {
+    background: #005a9c;
+}
+
+.ui-button.red {
+    background: #d9534f;
+    color: #fff;
+}
+
+.ui-button.red:active {
+    background: #c9302c;
+}
+
+.ui-button.green {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.ui-button.green:active {
+    background: #449d44;
+}
+
+.ui-button.orange {
+    background: #f0ad4e;
+    color: #fff;
+}
+
+.ui-button.orange:active {
+    background: #ec971f;
+}
+
+.container-recipes {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ui-table {
+    width: 100%;
+    display: table;
+}
+
+.ui-table > .row {
+    display: table-row;
+}
+
+.ui-table > .row.header {
+    font-weight: 600;
+}
+
+.ui-table > .row > .column {
+    padding: 10px 15px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.ui-table > .row > .column.buttons .ui-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.ui-table > .row.header {
+    background: none;
+}
+
+.ui-table > .row.header > .column {
+    background: #a5b1c2;
+    color: #fff;
+}
+
+.ui-table > .row.header > .column.min-width {
+    width: 1px;
+    white-space: nowrap;
+}
+
+.ui-table > .row:nth-child(2n) {
+    background: #f5f5f5;
+}
+
+.ui-table.minimal > .row.header > .column {
+    background: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.ui-table.minimal > .row:nth-child(2n) {
+    background: none;
+}
+
+.ui-table.small {
+    font-size: 0.85em;
+}
+
+.ui-table.small > .row > .column {
+    padding: 5px 10px;
+}
+
+.ui-table.small .ui-button {
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+.ui-alert {
+    background: #f5f5f5;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.ui-alert.error {
+    background: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
